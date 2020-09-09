@@ -1,0 +1,93 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: emmanuelkwene
+ * Date: 18/03/2016
+ * Time: 05:29
+ */
+
+
+get_header(); ?>
+
+<div class="l-content" id="l-content">
+
+    <div class="l-slider">
+        <?php if(is_plugin_active('revslider/revslider.php')) putRevSlider("slider1"); ?>
+    </div>
+
+    <?php \lib\FlexyLa\Flexyla::breadcrumb(); ?>
+
+    <div class="multi-column-content">
+
+        <main class="main" id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
+            <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+                <article id="post-<?php the_ID(); ?>" <?php post_class('content'); ?> role="article">
+
+                    <header class="article-header">
+                        <h1 class="entry-title">
+                            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php echo the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        </h1>
+
+                        <p class="entry-meta vcard">
+                            <?php printf( __( 'Posté le', 'flexyla_theme' ).' %1$s %2$s',
+                                '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+                                '<span class="by">'.__( 'par', 'flexyla_theme').'</span> <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
+                            ); ?>
+                        </p>
+
+                        <?php if(has_post_thumbnail()): ?>
+                            <?php the_post_thumbnail(); ?>
+                        <?php endif; ?>
+                    </header>
+
+                    <section class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </section>
+
+                    <footer class="article-footer">
+
+                        <p class="footer-comment-count">
+                            <?php //comments_number( __( '<span>Aucun</span> Commentaire', 'flexyla_theme' ), __( '<span>Un</span> Commentaire', 'flexyla_theme' ), __( '<span>%</span> Commentaires', 'flexyla_theme' ) );?>
+                        </p>
+
+                        <p class="footer-category"><?php //echo get_the_category_list(', '); ?></p>
+
+                        <?php //the_tags( '<p class="footer-tags tags"><span class="tags-title">' . __( 'Tags:', 'flexyla_theme' ) . '</span> ', ', ', '</p>' ); ?>
+
+                    </footer>
+
+                </article>
+
+            <?php endwhile; ?>
+
+                <?php \lib\FlexyLa\Flexyla::pagination(); ?>
+
+            <?php else: ?>
+
+                <article class="content no-post">
+
+                    <header class="entry-title">
+                        <h1>
+                            <?php _e('Aucun article trouvé', 'flexyla_theme') ?>
+                        </h1>
+                    </header>
+
+                    <section class="entry-content">
+                        <?php _e('Il semblerait qu\'une erreur soit survenue. Veuillez vérifier que tous soit en ordre!', 'flexyla_theme') ?>
+                    </section>
+
+                </article>
+
+            <?php endif; ?>
+
+        </main>
+
+        <?php get_sidebar(); ?>
+
+    </div><!-- .multi-column-content -->
+
+</div><!-- .l-content -->
+
+<?php get_footer(); ?>

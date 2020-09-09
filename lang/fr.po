@@ -1,0 +1,239 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Educato\n"
+"POT-Creation-Date: 2016-04-04 23:46+0100\n"
+"PO-Revision-Date: 2016-04-04 23:48+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:22
+msgid "ERREUR 404 - Page non trouvée"
+msgstr "ERREUR 404 - Page non trouvée"
+
+#: 404.php:27 front-page.php:74 index.php:70 single.php:41
+msgid ""
+"Il semblerait qu'une erreur soit survenue. Veuillez vérifier que tous soit "
+"en ordre!"
+msgstr ""
+
+#: comments.php:22
+msgid "<span>Aucun</span> Commentaire"
+msgstr ""
+
+#: comments.php:22
+msgid "<span>Un</span> Commentaire"
+msgstr ""
+
+#: comments.php:22
+msgid "<span>%</span> Commentaires"
+msgstr ""
+
+#: comments.php:32
+msgid "Répondre"
+msgstr ""
+
+#: comments.php:43
+msgid "&larr; Commentaires précédent"
+msgstr ""
+
+#: comments.php:44
+msgid "Commentaires suivants &rarr;"
+msgstr ""
+
+#: comments.php:49
+msgid "Les commentaires sont fermés."
+msgstr ""
+
+#: comments.php:62
+msgid "Laissez un commentaire"
+msgstr ""
+
+#: comments.php:63
+#, php-format
+msgid "Laissez un commentaire à %s"
+msgstr ""
+
+#: comments.php:64
+msgid "Annuler le commentaire"
+msgstr ""
+
+#: comments.php:65
+msgid "Poster le Commentaire"
+msgstr ""
+
+#: comments.php:68
+msgctxt "flexyla_theme"
+msgid "Commentaire"
+msgstr ""
+
+#: comments.php:74
+#, php-format
+msgid ""
+"Vous devez être <a href=\"%s\">connecté</a> pour pouvoir poster un "
+"commentaire."
+msgstr ""
+
+#: comments.php:80
+#, php-format
+msgid ""
+"Connecté comme <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Se "
+"déconnecter de ce compte\">Déconnexion?</a>"
+msgstr ""
+
+#: comments.php:87
+msgid "Votre addresse email ne sera pas publiée."
+msgstr ""
+
+#: comments.php:99
+msgid "Nom"
+msgstr ""
+
+#: comments.php:105
+msgid "Email"
+msgstr ""
+
+#: footer.php:72
+msgid "Menu"
+msgstr ""
+
+#: front-page.php:34 index.php:30 post-formats/format.php:7
+msgid "Posté le"
+msgstr ""
+
+#: front-page.php:36 index.php:32 post-formats/format.php:9
+msgid "par"
+msgstr ""
+
+#: front-page.php:69 index.php:65 single.php:36
+msgid "Aucun article trouvé"
+msgstr ""
+
+#: index.php:49 page.php:34 post-formats/format.php:24
+msgid "Tags:"
+msgstr ""
+
+#: lib/Flexyla.php:47
+msgid "Accueil"
+msgstr ""
+
+#: lib/Flexyla.php:155
+msgid "Lire la suite "
+msgstr ""
+
+#: lib/Flexyla.php:155
+msgid "Lire la suite &raquo;"
+msgstr ""
+
+#: lib/Flexyla.php:181
+msgid "F jS, Y"
+msgstr ""
+
+#: lib/Flexyla.php:182
+msgid "(Editer)"
+msgstr ""
+
+#: lib/Flexyla.php:187
+msgid ""
+"Votre commentaire est en attente de validation de la part de "
+"l'administration."
+msgstr ""
+
+#: lib/Flexyla.php:300
+msgid "Menu principal du site"
+msgstr ""
+
+#: lib/Flexyla.php:322
+msgid "Sidebar Gauche"
+msgstr ""
+
+#: lib/Flexyla.php:323
+msgid "La sidebar située juste à gauche du contenu"
+msgstr ""
+
+#: lib/Flexyla.php:343
+msgid "Sidebar Extrême Gauche"
+msgstr ""
+
+#: lib/Flexyla.php:344
+msgid "La sidebar située à l'extrême du contenu"
+msgstr ""
+
+#: lib/Flexyla.php:362
+msgid "Pied de page (1 sur 3 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:363 lib/Flexyla.php:382 lib/Flexyla.php:401
+msgid "Containeur du footer avec 3 colonnes"
+msgstr ""
+
+#: lib/Flexyla.php:381
+msgid "Pied de page (2 sur 3 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:400
+msgid "Pied de page (3 sur 3 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:419
+msgid "Pied de page (1 sur 2 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:420 lib/Flexyla.php:439
+msgid "Containeur du footer avec 2 colonnes"
+msgstr ""
+
+#: lib/Flexyla.php:438
+msgid "Pied de page (2 sur 2 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:457
+msgid "Pied de page (1 sur 1 colonnes)"
+msgstr ""
+
+#: lib/Flexyla.php:458
+msgid "Containeur du footer avec une colonne"
+msgstr ""
+
+#: lib/Flexyla.php:506
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: searchform.php:2
+msgid "Recherche..."
+msgstr ""
+
+#: searchform.php:2
+msgid "Recherche pour:"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Educato"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://emmanuelkwene.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "University site wordpress theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Emmanuel KWENE"
+msgstr ""
