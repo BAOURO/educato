@@ -4,8 +4,24 @@ export default {
     "./*.php",
     "./templates/**/*.php",
     "./lib/**/*.php",
-    "./src/**/*.{js,css}"
+    "./src/**/*.{js,css}",
+    "!./wp-admin/**/*",
+    "!./wp-includes/**/*"
   ],
+  safelist: [
+    'bg-primary-600',
+    'text-primary-600',
+    'border-primary-600',
+    'bg-primary-500',
+    'text-primary-500',
+    'hover:bg-primary-700',
+    'bg-secondary-500',
+    'text-secondary-500',
+    'bg-secondary-600'
+  ],
+  corePlugins: {
+    preflight: false, // Désactive le reset CSS de Tailwind pour éviter les conflits WordPress
+  },
   theme: {
     extend: {
       colors: {
