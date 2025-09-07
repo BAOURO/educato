@@ -1,0 +1,20 @@
+{
+  "name": "educato-theme",
+  "version": "2.0.0",
+  "description": "Modern WordPress theme with Tailwind CSS 4 and Alpine.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^4.0.0-alpha.4",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.3"
+  }
+}
