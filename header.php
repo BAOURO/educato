@@ -103,15 +103,21 @@
                     
                     <!-- Desktop Navigation -->
                     <nav class="hidden lg:block">
+                        <div class="menu-container">
                         <?php
-                        wp_nav_menu([
-                            'theme_location' => 'primary',
-                            'container' => false,
-                            'menu_class' => 'menu-horizontal',
-                            'walker' => new \Educato\Walker_Nav_Menu(),
-                            'fallback_cb' => false
-                        ]);
+                        if (has_nav_menu('primary')) {
+                            wp_nav_menu([
+                                'theme_location' => 'primary',
+                                'container' => false,
+                                'menu_class' => 'menu-horizontal',
+                                'walker' => new \Educato\Walker_Nav_Menu(),
+                                'fallback_cb' => false
+                            ]);
+                        } else {
+                            echo '<div class="text-gray-500 text-sm">Menu non configuré. Allez dans Apparence > Menus pour créer un menu.</div>';
+                        }
                         ?>
+                        </div>
                     </nav>
                     
                     <!-- Search & Mobile menu -->

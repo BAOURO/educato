@@ -36,6 +36,12 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
         $item_output = isset($args->before) ? $args->before : '';
         $item_output .= '<a' . $attributes .'>';
         $item_output .= (isset($args->link_before) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (isset($args->link_after) ? $args->link_after : '');
+        
+        // Debug: Add visible text if title is empty
+        if (empty($item->title)) {
+            $item_output .= 'Menu Item';
+        }
+        
         $item_output .= '</a>';
         $item_output .= isset($args->after) ? $args->after : '';
         

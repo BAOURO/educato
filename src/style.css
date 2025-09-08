@@ -82,15 +82,26 @@
   
   /* Navigation Menu Styles */
   .menu-horizontal {
-    @apply flex items-center space-x-4;
+    @apply flex items-center space-x-4 !important;
+    display: flex !important;
+    visibility: visible !important;
   }
   
   .menu-horizontal li {
-    @apply relative;
+    @apply relative !important;
+    display: inline-block !important;
+    list-style: none !important;
   }
   
   .menu-horizontal a {
-    @apply block px-4 py-2 text-gray-700 hover:text-primary-600 transition-colors font-medium rounded-lg;
+    @apply block px-4 py-2 text-gray-700 hover:text-primary-600 transition-colors font-medium rounded-lg !important;
+    display: block !important;
+    text-decoration: none !important;
+    color: #374151 !important;
+  }
+  
+  .menu-horizontal a:hover {
+    color: #0284c7 !important;
   }
   
   .menu-horizontal .sub-menu {
@@ -116,6 +127,43 @@
   
   .menu-mobile a {
     @apply block px-4 py-2 text-gray-700 hover:text-primary-600 transition-colors font-medium;
+  }
+  
+  /* Force menu visibility - Debug styles */
+  nav .menu-horizontal,
+  nav ul.menu-horizontal {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  nav .menu-horizontal li,
+  nav ul.menu-horizontal li {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+  
+  nav .menu-horizontal a,
+  nav ul.menu-horizontal a {
+    display: block !important;
+    padding: 0.5rem 1rem !important;
+    color: #374151 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  nav .menu-horizontal a:hover,
+  nav ul.menu-horizontal a:hover {
+    color: #0284c7 !important;
+    background-color: rgba(2, 132, 199, 0.1) !important;
   }
 }
 
