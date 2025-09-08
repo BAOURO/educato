@@ -107,7 +107,7 @@
                         wp_nav_menu([
                             'theme_location' => 'primary',
                             'container' => false,
-                            'menu_class' => 'flex items-center space-x-1',
+                            'menu_class' => 'flex items-center space-x-2',
                             'walker' => new \Educato\Walker_Nav_Menu(),
                             'mobile' => false
                         ]);
