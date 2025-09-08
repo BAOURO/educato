@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset pour éviter les conflits avec WordPress */
+@layer base {
+  /* Reset des icônes WordPress */
+  .dashicons,
+  .dashicons-before:before {
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 1 !important;
+  }
+  
+  /* Reset pour les icônes admin WordPress */
+  #adminmenu .dashicons,
+  #wpadminbar .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  /* Éviter les conflits avec les grilles WordPress */
+  .wp-admin .grid {
+    display: block !important;
+  }
+  
+  /* Reset spécifique pour l'admin WordPress */
+  body.wp-admin * {
+    box-sizing: border-box;
+  }
+}
+
+/* Custom WordPress styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body:not(.wp-admin) {
+    @apply font-sans text-gray-900 leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500 hover:shadow-md hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-50 overflow-hidden transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .widget {
+    @apply bg-white rounded-2xl shadow-md border border-gray-50 p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .hero-section {
+    @apply relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden;
+  }
+  
+  .content-spacing {
+    @apply space-y-6;
+  }
+  
+  .section-spacing {
+    @apply py-12 lg:py-16;
+  }
+}
+
+/* WordPress specific styles */
+.alignnone {
+  @apply my-4;
+}
+
+.aligncenter {
+  @apply block mx-auto my-4;
+}
+
+.alignright {
+  @apply float-right ml-4 mb-4;
+}
+
+.alignleft {
+  @apply float-left mr-4 mb-4;
+}
+
+.wp-caption {
+  @apply bg-white border border-gray-200 rounded-lg p-3 text-center max-w-full;
+}
+
+.wp-caption img {
+  @apply w-full h-auto rounded;
+}
+
+.wp-caption-text {
+  @apply text-sm text-gray-600 mt-2;
+}
+
+.screen-reader-text {
+  @apply sr-only;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
