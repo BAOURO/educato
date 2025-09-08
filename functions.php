@@ -14,6 +14,7 @@ require_once EDUCATO_THEME_PATH . '/lib/Theme.php';
 require_once EDUCATO_THEME_PATH . '/lib/Navigation.php';
 require_once EDUCATO_THEME_PATH . '/lib/Assets.php';
 require_once EDUCATO_THEME_PATH . '/lib/Customizer.php';
+require_once EDUCATO_THEME_PATH . '/lib/Walker_Nav_Menu.php';
 
 // Initialize theme
 function educato_init() {

@@ -108,7 +108,8 @@
                             'theme_location' => 'primary',
                             'container' => false,
                             'menu_class' => 'flex items-center space-x-1',
-                            'walker' => new \Educato\Walker_Nav_Menu()
+                            'walker' => new \Educato\Walker_Nav_Menu(),
+                            'mobile' => false
                         ]);
                         ?>
                     </nav>
@@ -164,8 +165,7 @@
                     'theme_location' => 'primary',
                     'container' => false,
                     'menu_class' => 'space-y-1',
-                    'walker' => new \Educato\Walker_Nav_Menu(),
-                    'mobile' => true
+                    'walker' => new \Educato\Walker_Nav_Menu()
                 ]);
                 ?>
             </nav>
