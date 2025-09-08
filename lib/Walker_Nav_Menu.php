@@ -7,22 +7,8 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
     public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
         
-        // Convert args to object if it's an array
-        if (is_array($args)) {
-            $args = (object) $args;
-        }
-        
-        // Ensure args is an object with default properties
-        if (!is_object($args)) {
-            $args = new stdClass();
-        }
-        
-        // Set default properties if they don't exist
-        if (!isset($args->before)) $args->before = '';
-        if (!isset($args->after)) $args->after = '';
-        if (!isset($args->link_before)) $args->link_before = '';
-        if (!isset($args->link_after)) $args->link_after = '';
-        if (!isset($args->mobile)) $args->mobile = false;
+        // Ensure args is properly formatted
+        $args = $this->normalize_args($args);
         
         $classes = empty($item->classes) ? [] : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
@@ -77,20 +63,8 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
     public function start_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
         
-        // Convert args to object if it's an array
-        if (is_array($args)) {
-            $args = (object) $args;
-        }
-        
-        // Ensure args is an object with mobile property
-        if (!is_object($args)) {
-            $args = new stdClass();
-            $args->mobile = false;
-        }
-        
-        if (!isset($args->mobile)) {
-            $args->mobile = false;
-        }
+        // Ensure args is properly formatted
+        $args = $this->normalize_args($args);
         
         if ($args->mobile) {
             $output .= "\n$indent<ul class=\"ml-4\">\n";
@@ -102,5 +76,33 @@ class Walker_Nav_Menu extends \Walker_Nav_Menu {
     public function end_lvl(&$output, $depth = 0, $args = null) {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
+    }
+    
+    /**
+     * Normalize args to ensure proper object structure
+     */
+    private function normalize_args($args) {
+        // If args is null or not an object, create a new stdClass
+        if (!is_object($args)) {
+            $new_args = new \stdClass();
+            
+            // If args was an array, copy its properties
+            if (is_array($args)) {
+                foreach ($args as $key => $value) {
+                    $new_args->$key = $value;
+                }
+            }
+            
+            $args = $new_args;
+        }
+        
+        // Set default properties if they don't exist
+        if (!isset($args->before)) $args->before = '';
+        if (!isset($args->after)) $args->after = '';
+        if (!isset($args->link_before)) $args->link_before = '';
+        if (!isset($args->link_after)) $args->link_after = '';
+        if (!isset($args->mobile)) $args->mobile = false;
+        
+        return $args;
     }
 }

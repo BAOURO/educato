@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     
+    <?php if (!is_admin()): ?>
+    <style>
+        /* Isolation des styles pour éviter les conflits */
+        .site {
+            isolation: isolate;
+        }
+        
+        /* Reset spécifique pour les icônes SVG */
+        .site svg {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        /* Assurer que les grilles ne s'appliquent que dans le site */
+        .site .grid {
+            display: grid;
+        }
+    </style>
+    <?php endif; ?>
+    
     <?php wp_head(); ?>
 </head>
 
@@ -88,7 +108,7 @@
                             'theme_location' => 'primary',
                             'container' => false,
                             'menu_class' => 'flex items-center space-x-1',
-                            'walker' => new Walker_Nav_Menu()
+                            'walker' => new \Educato\Walker_Nav_Menu()
                         ]);
                         ?>
                     </nav>
@@ -144,7 +164,7 @@
                     'theme_location' => 'primary',
                     'container' => false,
                     'menu_class' => 'space-y-1',
-                    'walker' => new Walker_Nav_Menu(),
+                    'walker' => new \Educato\Walker_Nav_Menu(),
                     'mobile' => true
                 ]);
                 ?>
