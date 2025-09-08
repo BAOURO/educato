@@ -17,7 +17,7 @@ class Navigation {
     }
     
     public function register_sidebars() {
-        // Main sidebar
+        // Sidebar principal (non utilisé sur la home)
         register_sidebar([
             'name' => __('Sidebar Principal', 'educato'),
             'id' => 'sidebar-main',
@@ -25,6 +25,17 @@ class Navigation {
             'before_widget' => '<div id="%1$s" class="widget mb-8 %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="widget-title text-lg font-semibold mb-4 text-gray-900">',
+            'after_title' => '</h3>'
+        ]);
+        
+        // Sidebar gauche pour la home page
+        register_sidebar([
+            'name' => __('Widget Gauche Accueil', 'educato'),
+            'id' => 'sidebar-left-left',
+            'description' => __('Widget affiché à gauche sur la page d\'accueil', 'educato'),
+            'before_widget' => '<div id="%1$s" class="widget mb-6 %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title text-lg font-semibold mb-3 text-gray-900">',
             'after_title' => '</h3>'
         ]);
         

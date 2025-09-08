@@ -1,26 +1,26 @@
 <?php get_header(); ?>
 
-<div class="container-custom py-8">
+<div class="container-custom section-spacing">
     <?php \Educato\Theme::breadcrumb(); ?>
     
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
         <!-- Main content -->
         <main class="lg:col-span-2">
             <?php if (have_posts()): ?>
-                <div class="space-y-8">
+                <div class="content-spacing">
                     <?php while (have_posts()): the_post(); ?>
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('card animate-fade-in-up'); ?>>
+                        <article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
                             <?php if (has_post_thumbnail()): ?>
-                            <div class="aspect-video overflow-hidden">
+                            <div class="aspect-video overflow-hidden rounded-t-2xl">
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_post_thumbnail('card', ['class' => 'w-full h-full object-cover hover:scale-105 transition-transform duration-300']); ?>
                                 </a>
                             </div>
                             <?php endif; ?>
                             
-                            <div class="p-6">
+                            <div class="p-5">
                                 <header class="mb-4">
-                                    <div class="flex items-center text-sm text-gray-500 mb-2">
+                                    <div class="flex items-center text-sm text-gray-500 mb-1">
                                         <time datetime="<?php echo get_the_date('c'); ?>" class="flex items-center">
                                             <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
@@ -37,14 +37,14 @@
                                         <?php endif; ?>
                                     </div>
                                     
-                                    <h2 class="text-xl font-semibold mb-3">
+                                    <h2 class="text-xl font-semibold mb-2">
                                         <a href="<?php the_permalink(); ?>" class="text-gray-900 hover:text-primary-600 transition-colors">
                                             <?php the_title(); ?>
                                         </a>
                                     </h2>
                                 </header>
                                 
-                                <div class="prose prose-gray max-w-none mb-4">
+                                <div class="prose prose-gray max-w-none mb-3">
                                     <?php the_excerpt(); ?>
                                 </div>
                                 

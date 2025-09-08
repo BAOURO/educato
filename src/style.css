@@ -1,35 +1,81 @@
 @import 'tailwindcss';
 
+/* Reset pour éviter les conflits avec WordPress */
+@layer base {
+  /* Reset des icônes WordPress */
+  .dashicons,
+  .dashicons-before:before {
+    font-size: 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 1 !important;
+  }
+  
+  /* Reset pour les icônes admin WordPress */
+  #adminmenu .dashicons,
+  #wpadminbar .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  /* Éviter les conflits avec les grilles WordPress */
+  .wp-admin .grid {
+    display: block !important;
+  }
+  
+  /* Reset spécifique pour l'admin WordPress */
+  body.wp-admin * {
+    box-sizing: border-box;
+  }
+}
+
 /* Custom WordPress styles */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
-  body {
+  body:not(.wp-admin) {
     @apply font-sans text-gray-900 leading-relaxed;
   }
 }
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-sm hover:shadow-md;
   }
   
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 hover:shadow-lg hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500;
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500 hover:shadow-md hover:-translate-y-0.5;
   }
   
   .card {
-    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden;
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl border border-gray-50 overflow-hidden transition-all duration-300 hover:-translate-y-1;
   }
   
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .widget {
+    @apply bg-white rounded-2xl shadow-md border border-gray-50 p-6 transition-all duration-300 hover:shadow-lg;
+  }
+  
+  .hero-section {
+    @apply relative bg-gradient-to-br from-primary-600 to-primary-800 text-white overflow-hidden;
+  }
+  
+  .content-spacing {
+    @apply space-y-6;
+  }
+  
+  .section-spacing {
+    @apply py-12 lg:py-16;
   }
 }
 
