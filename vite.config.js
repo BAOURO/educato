@@ -15,7 +15,6 @@ export default defineConfig({
         assetFileNames: '[name].[ext]'
       }
     },
-    // Configuration optimisée pour Vite 7
     target: 'es2020',
     minify: 'esbuild',
     sourcemap: false
@@ -28,7 +27,6 @@ export default defineConfig({
       ]
     }
   },
-  // Optimisations pour Vite 7
   optimizeDeps: {
     include: ['alpinejs']
   },
