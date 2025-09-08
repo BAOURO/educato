@@ -107,8 +107,9 @@
                         wp_nav_menu([
                             'theme_location' => 'primary',
                             'container' => false,
-                            'menu_class' => 'flex items-center space-x-2',
+                            'menu_class' => 'menu-horizontal',
                             'walker' => new \Educato\Walker_Nav_Menu(),
+                            'fallback_cb' => false
                             'mobile' => false
                         ]);
                         ?>
@@ -164,8 +165,9 @@
                 wp_nav_menu([
                     'theme_location' => 'primary',
                     'container' => false,
-                    'menu_class' => 'space-y-1',
-                    'walker' => new \Educato\Walker_Nav_Menu()
+                    'menu_class' => 'menu-mobile',
+                    'walker' => new \Educato\Walker_Nav_Menu(),
+                    'fallback_cb' => false
                 ]);
                 ?>
             </nav>
